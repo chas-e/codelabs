@@ -76,6 +76,8 @@ class HomePage extends StatelessWidget {
           Paragraph(
             'Join us for a day full of Firebase Workshops and Pizza!',
           ),
+          Header('Discussion'),
+          GuestBook(addMessage: (String message) => print(message)),
         ],
       ),
     );
@@ -182,7 +184,7 @@ class _GuestBookState extends State<GuestBook> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      chiild: Form(
+      child: Form(
         key: _formKey,
         child: Row(
           children: [
@@ -212,7 +214,9 @@ class _GuestBookState extends State<GuestBook> {
                 children: [
                   Icon(Icons.send),
                   SizedBox(width: 4),
-                  Text('SEND',)
+                  Text(
+                    'SEND',
+                  )
                 ],
               ),
             ),
